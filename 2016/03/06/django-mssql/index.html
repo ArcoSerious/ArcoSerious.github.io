@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="python,Django," />
 
 
 
@@ -57,16 +57,25 @@
 
 
 
-<meta name="description" content="第一篇博文很大程度上我这么懒的人不会去认真写博文……比较有趣的是建立博客的过程吧，这个过程中遇到了一些坑，但大体上还是比较愉快轻松的。删除了以前的github账号重建了一个，算是洗心改面重头再来……最重要的是，这只是一个test, 随便写写">
+<meta name="description" content="以下是我初学Django，用mssql适配器和与数据库交互遇到的问题和注意事项，基本上搜索都能出来，总结记录了一下。
+我用的适配器是django-mssql，其他的如pyodbc也还可以，感觉配置比django-mssql简单，但也没有相差很多，酌情选择
+安装pywin32模块时，找不到python路径
+错误显示为Python version 2.7 required, which was not">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2016/03/05/Hello-Hexo/index.html">
+<meta property="og:title" content="初学Django遇到的数据库相关问题总结">
+<meta property="og:url" content="http://yoursite.com/2016/03/06/django-mssql/index.html">
 <meta property="og:site_name" content="A little because">
-<meta property="og:description" content="第一篇博文很大程度上我这么懒的人不会去认真写博文……比较有趣的是建立博客的过程吧，这个过程中遇到了一些坑，但大体上还是比较愉快轻松的。删除了以前的github账号重建了一个，算是洗心改面重头再来……最重要的是，这只是一个test, 随便写写">
-<meta property="og:updated_time" content="2016-03-05T13:28:20.283Z">
+<meta property="og:description" content="以下是我初学Django，用mssql适配器和与数据库交互遇到的问题和注意事项，基本上搜索都能出来，总结记录了一下。
+我用的适配器是django-mssql，其他的如pyodbc也还可以，感觉配置比django-mssql简单，但也没有相差很多，酌情选择
+安装pywin32模块时，找不到python路径
+错误显示为Python version 2.7 required, which was not">
+<meta property="og:updated_time" content="2016-03-06T08:18:35.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="第一篇博文很大程度上我这么懒的人不会去认真写博文……比较有趣的是建立博客的过程吧，这个过程中遇到了一些坑，但大体上还是比较愉快轻松的。删除了以前的github账号重建了一个，算是洗心改面重头再来……最重要的是，这只是一个test, 随便写写">
+<meta name="twitter:title" content="初学Django遇到的数据库相关问题总结">
+<meta name="twitter:description" content="以下是我初学Django，用mssql适配器和与数据库交互遇到的问题和注意事项，基本上搜索都能出来，总结记录了一下。
+我用的适配器是django-mssql，其他的如pyodbc也还可以，感觉配置比django-mssql简单，但也没有相差很多，酌情选择
+安装pywin32模块时，找不到python路径
+错误显示为Python version 2.7 required, which was not">
 
 
 
@@ -84,7 +93,7 @@
   };
 </script>
 
-  <title> test | A little because </title>
+  <title> 初学Django遇到的数据库相关问题总结 | A little because </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -376,7 +385,7 @@
             
             
               
-                test
+                初学Django遇到的数据库相关问题总结
               
             
           </h1>
@@ -388,8 +397,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-05T14:30:23+08:00" content="2016-03-05">
-              2016-03-05
+            <time itemprop="dateCreated" datetime="2016-03-06T14:34:03+08:00" content="2016-03-06">
+              2016-03-06
             </time>
           </span>
 
@@ -399,8 +408,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/05/Hello-Hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/05/Hello-Hexo/" itemprop="commentsCount"></span>
+                <a href="/2016/03/06/django-mssql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/06/django-mssql/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -422,7 +431,63 @@
       
 
       
-        <h3 id="第一篇博文"><a href="#第一篇博文" class="headerlink" title="第一篇博文"></a>第一篇博文</h3><p>很大程度上我这么懒的人不会去认真写博文……比较有趣的是建立博客的过程吧，这个过程中遇到了一些坑，但大体上还是比较愉快轻松的。删除了以前的github账号重建了一个，算是洗心改面重头再来……<br>最重要的是，这只是一个<strong>test</strong>, 随便写写</p>
+        <p><em>以下是我初学Django，用mssql适配器和与数据库交互遇到的问题和注意事项，基本上搜索都能出来，总结记录了一下。</em></p>
+<p><strong>我用的适配器是django-mssql，其他的如pyodbc也还可以，感觉配置比django-mssql简单，但也没有相差很多，酌情选择</strong></p>
+<h3 id="安装pywin32模块时，找不到python路径"><a href="#安装pywin32模块时，找不到python路径" class="headerlink" title="安装pywin32模块时，找不到python路径"></a>安装pywin32模块时，找不到python路径</h3><blockquote>
+<p>错误显示为<em>Python version 2.7 required, which was not found in the registry</em></p>
+<ul>
+<li>新建register.py文件，将以下代码<a id="more"></a>复制：</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># script to register Python 2.0 or later for use with win32all</span></span><br><span class="line"><span class="comment"># and other extensions that require Python registry settings</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># written by Joakim Loew for Secret Labs AB / PythonWare</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># source:</span></span><br><span class="line"><span class="comment"># http://www.pythonware.com/products/works/articles/regpy20.htm</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># modified by Valentine Gogichashvili as described in http://www.mail-archive.com/distutils-sig@python.org/msg10512.html</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> _winreg <span class="keyword">import</span> *</span><br><span class="line"> </span><br><span class="line"><span class="comment"># tweak as necessary</span></span><br><span class="line">version = sys.version[:<span class="number">3</span>]</span><br><span class="line">installpath = sys.prefix</span><br><span class="line"> </span><br><span class="line">regpath = <span class="string">"SOFTWARE\\Python\\Pythoncore\\%s\\"</span> % (version)</span><br><span class="line">installkey = <span class="string">"InstallPath"</span></span><br><span class="line">pythonkey = <span class="string">"PythonPath"</span></span><br><span class="line">pythonpath = <span class="string">"%s;%s\\Lib\\;%s\\DLLs\\"</span> % (</span><br><span class="line">    installpath, installpath, installpath</span><br><span class="line">)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">RegisterPy</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        reg = OpenKey(HKEY_CURRENT_USER, regpath)</span><br><span class="line">    <span class="keyword">except</span> EnvironmentError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            reg = CreateKey(HKEY_CURRENT_USER, regpath)</span><br><span class="line">            SetValue(reg, installkey, REG_SZ, installpath)</span><br><span class="line">            SetValue(reg, pythonkey, REG_SZ, pythonpath)</span><br><span class="line">            CloseKey(reg)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"*** Unable to register!"</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"--- Python"</span>, version, <span class="string">"is now registered!"</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> (QueryValue(reg, installkey) == installpath <span class="keyword">and</span></span><br><span class="line">        QueryValue(reg, pythonkey) == pythonpath):</span><br><span class="line">        CloseKey(reg)</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"=== Python"</span>, version, <span class="string">"is already registered!"</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    CloseKey(reg)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"*** Unable to register!"</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"*** You probably have another Python installation!"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    RegisterPy()`</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>运行脚本即可。</li>
+<li><em><a href="http://www.cnblogs.com/min0208/archive/2012/05/24/2515584.html" target="_blank" rel="external">reference</a></em></li>
+</ul>
+</blockquote>
+<h3 id="django-mssql安装注意事项"><a href="#django-mssql安装注意事项" class="headerlink" title="django-mssql安装注意事项"></a>django-mssql安装注意事项</h3><blockquote>
+<ul>
+<li>执行python setup.py install命令</li>
+<li>将python的安装目录下的django的同目录下的django_mssql-xxb1-py2.7.egg中sqlserver_ado目录拷贝到\Python27\Lib\site-packages\django\db\backends目录下</li>
+</ul>
+</blockquote>
+<h3 id="settings-py中DATABASES的ENGINE配置"><a href="#settings-py中DATABASES的ENGINE配置" class="headerlink" title="settings.py中DATABASES的ENGINE配置"></a>settings.py中DATABASES的ENGINE配置</h3><blockquote>
+<ul>
+<li>需注意ENGINE填django.db.backends.sqlserver_ado而不是django-mssql</li>
+<li>reference:<ul>
+<li><a href="http://django-mssql.readthedocs.org/en/latest/quickstart.html" target="_blank" rel="external">django mssql</a></li>
+<li><a href="http://www.cnblogs.com/likeshan168/articles/3557446.html" target="_blank" rel="external">django 项目中使用mssql</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="从数据库中自动生成django模型"><a href="#从数据库中自动生成django模型" class="headerlink" title="从数据库中自动生成django模型"></a>从数据库中自动生成django模型</h3><blockquote>
+<ul>
+<li>通过python manage.py inspectdb &gt;…/models.py命令自动生成模型。</li>
+<li><a href="http://silo.blog.163.com/blog/static/21363515320115121500247/" target="_blank" rel="external">reference</a></li>
+</ul>
+</blockquote>
+<h3 id="不使用django的orm，如何写原生sql并且返回字典"><a href="#不使用django的orm，如何写原生sql并且返回字典" class="headerlink" title="不使用django的orm，如何写原生sql并且返回字典"></a>不使用django的orm，如何写原生sql并且返回字典</h3><p><em>有时候要做一些复杂查询，orm可能不能满足，还是写原生sql方便一些。</em></p>
+<blockquote>
+<p>两种方法：</p>
+<ul>
+<li>Manager.raw()，个人觉得不好，不多说</li>
+<li>避免数据模型，自定义sql语句</li>
+</ul>
+</blockquote>
+<p><strong>以下说的是第二种方法</strong></p>
+<blockquote>
+<ul>
+<li>概览：<br><em>from django.db import connection,transaction：导入模块</em><br><em>django.db.connection：代表默认的数据库连接</em><br><em>django.db.transaction：代表默认数据库事务（transaction）</em><br><em>connection.cursor()： 获得一个游标(cursor)对象</em><br><em>cursor.execute(sql, [params])：执行SQL</em><br><em>cursor.fetchone() 或者 cursor.fetchall()：返回结果行</em></li>
+<li>实例（我常用）：</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> connection,transaction</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function</span><span class="params">(request,id)</span>:</span></span><br><span class="line">    cursor = connection.cursor()</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'GET'</span>:</span><br><span class="line">        cursor.execute(<span class="string">"select * from table where id ='%s'"</span>%id)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># fetchall返回所有结果，fetchone返回第一个结果，数据形式：fetchone--&gt;()  fetchall--&gt;[()]</span></span><br><span class="line">        raws = cursor.fetchall()</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 获得表的属性list</span></span><br><span class="line">		<span class="comment"># cursor.description中记录了表的很多信息，每个元素都是表一列的信息（对应代码中的desc），desc本身又是个tuple，desc[0]记录的就是该列的属性名，详情可print看看</span></span><br><span class="line">        col_names = [desc[<span class="number">0</span>] <span class="keyword">for</span> desc <span class="keyword">in</span> cursor.description]</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># zip()函数将两参数的值一一对应产生tuple，并用dict()函数转成字典</span></span><br><span class="line">        res_list = [dict(zip(col_names, raw)) <span class="keyword">for</span> raw <span class="keyword">in</span> raws]</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 转成json返回给前台，注意编码问题</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(json.dumps(user_list,encoding=<span class="string">'GB2312'</span>),content_type=<span class="string">"application/json"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行增删改操作，则在cursor.execute()之后调用transaction.commit_unless_managed()来保证你的更改提交到数据库。</p>
+</blockquote>
+<p><em>印象中django-mssql和pywin32的版本问题也挺头疼，资源挺难找的，但时间太久了，记错勿怪</em></p>
 
       
     </div>
@@ -437,7 +502,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag">#test</a>
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/Django/" rel="tag">#Django</a>
           
         </div>
       
@@ -446,13 +513,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/03/05/Hello-Hexo/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/06/django-mssql/" rel="prev" title="初学Django遇到的数据库相关问题总结">
-                初学Django遇到的数据库相关问题总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -478,8 +545,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/05/Hello-Hexo/"
-           data-title="test" data-url="http://yoursite.com/2016/03/05/Hello-Hexo/">
+      <div class="ds-thread" data-thread-key="2016/03/06/django-mssql/"
+           data-title="初学Django遇到的数据库相关问题总结" data-url="http://yoursite.com/2016/03/06/django-mssql/">
       </div>
     
   </div>
@@ -596,7 +663,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一篇博文"><span class="nav-number">1.</span> <span class="nav-text">第一篇博文</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装pywin32模块时，找不到python路径"><span class="nav-number">1.</span> <span class="nav-text">安装pywin32模块时，找不到python路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#django-mssql安装注意事项"><span class="nav-number">2.</span> <span class="nav-text">django-mssql安装注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#settings-py中DATABASES的ENGINE配置"><span class="nav-number">3.</span> <span class="nav-text">settings.py中DATABASES的ENGINE配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从数据库中自动生成django模型"><span class="nav-number">4.</span> <span class="nav-text">从数据库中自动生成django模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不使用django的orm，如何写原生sql并且返回字典"><span class="nav-number">5.</span> <span class="nav-text">不使用django的orm，如何写原生sql并且返回字典</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
